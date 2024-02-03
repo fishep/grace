@@ -1,1 +1,35 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+//        maven { url "https://repo.spring.io/release" }
+    }
+}
+
 rootProject.name = 'grace'
+//rootProject.children.each {project ->
+//    project.buildFileName = "${project.name}.gradle"
+//}
+
+include 'common'
+include 'shop-gateway'
+include 'shop-service'
+include 'back-gateway'
+include 'back-service'
+include 'open-gateway'
+include 'open-service'
+
+include 'microservice'
+include 'microservice:sso-common'
+findProject(':microservice:sso-common')?.name = 'sso-common'
+include 'microservice:sso-server'
+findProject(':microservice:sso-server')?.name = 'sso-server'
+include 'microservice:sso-starter'
+findProject(':microservice:sso-starter')?.name = 'sso-starter'
+include 'microservice:isc-common'
+findProject(':microservice:isc-common')?.name = 'isc-common'
+include 'microservice:isc-server'
+findProject(':microservice:isc-server')?.name = 'isc-server'
+include 'microservice:isc-starter'
+findProject(':microservice:isc-starter')?.name = 'isc-starter'
+

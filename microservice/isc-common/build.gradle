@@ -1,0 +1,4 @@
+description 'isc common'
+
+dependencies {
+}

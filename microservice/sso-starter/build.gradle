@@ -1,0 +1,5 @@
+description 'sso start, sso spring boot starter'
+
+dependencies {
+    api project(":microservice:sso-common")
+}

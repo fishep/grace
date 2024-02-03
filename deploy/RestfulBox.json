@@ -1,0 +1,45 @@
+{
+  "setting": {
+    "project": "grace",
+    "saveRequestLog": false,
+    "enablePreRequestScript": true,
+    "enablePostRequestScript": true,
+    "preRequestScriptPath": "",
+    "postRequestScriptPath": "",
+    "preRequestScriptContent": "",
+    "postRequestScriptContent": "",
+    "preRequestScriptContentLastModifiedTime": "",
+    "postRequestScriptContentLastModifiedTime": "",
+    "requestTimeout": 0,
+    "generateMultilineCurlSnippet": false,
+    "supportForWslPath": false,
+    "supportMinifyJson": false,
+    "downloadDirectory": ""
+  },
+  "environment": {
+    "project": "grace",
+    "envList": [
+      {
+        "env": "DEV",
+        "items": [
+          {
+            "enabled": true,
+            "key": "baseUrl",
+            "value": "http://localhost:8080"
+          },
+          {
+            "enabled": true,
+            "key": "ssoUrl",
+            "value": "http://sso-server.dev:12000"
+          }
+        ]
+      }
+    ],
+    "globalHeaderList": [],
+    "script": null
+  },
+  "header": {
+    "project": "grace",
+    "globalHeaderList": []
+  }
+}

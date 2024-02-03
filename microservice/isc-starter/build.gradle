@@ -1,0 +1,5 @@
+description 'isc starter'
+
+dependencies {
+    api project(":microservice:isc-common")
+}
