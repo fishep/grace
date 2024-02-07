@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/test")
 public class TestRestController {
 
-    @GetMapping("/api")
+    @GetMapping("/hello")
     public String api() {
         return "hello isc api";
     }

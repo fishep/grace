@@ -1,0 +1,6 @@
+server:
+  port: ${PORT:13000}
+
+spring:
+  application:
+    name: isc-server

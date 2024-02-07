@@ -29,8 +29,33 @@
           },
           {
             "enabled": true,
+            "key": "shopUrl",
+            "value": "http://shop-service.dev:10100/api"
+          },
+          {
+            "enabled": true,
+            "key": "backUrl",
+            "value": "http://back-service.dev:10200/api"
+          },
+          {
+            "enabled": true,
+            "key": "openUrl",
+            "value": "http://open-service.dev:10300/api"
+          },
+          {
+            "enabled": true,
+            "key": "dmsUrl",
+            "value": "http://dms-server.dev:11000/api"
+          },
+          {
+            "enabled": true,
             "key": "ssoUrl",
-            "value": "http://sso-server.dev:12000"
+            "value": "http://sso-server.dev:12000/api"
+          },
+          {
+            "enabled": true,
+            "key": "iscUrl",
+            "value": "http://isc-server.dev:13000/api"
           }
         ]
       }

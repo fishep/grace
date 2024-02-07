@@ -1,4 +1,4 @@
-package com.fishep.sso.server.interfaces.controller;
+package com.fishep.back.service.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +15,7 @@ public class TestRestController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "hello sso api";
+        return "hello Back Service api";
     }
     
 }
