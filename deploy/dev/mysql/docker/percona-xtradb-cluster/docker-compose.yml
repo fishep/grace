@@ -15,6 +15,7 @@ services:
     volumes:
       - pxc-cert:/cert
       - pxc-config:/etc/percona-xtradb-cluster.conf.d
+      - ./etc/mysql-node1.cnf:/etc/mysql/conf.d/mysql-node1.cnf:ro
       - mysql-node1-data:/var/lib/mysql
     ports:
       - "3306:3306"
@@ -41,6 +42,7 @@ services:
     volumes:
       - pxc-cert:/cert
       - pxc-config:/etc/percona-xtradb-cluster.conf.d
+      - ./etc/mysql-node2.cnf:/etc/mysql/conf.d/mysql-node2.cnf:ro
       - mysql-node2-data:/var/lib/mysql
     ports:
       - "3307:3306"
@@ -67,6 +69,7 @@ services:
     volumes:
       - pxc-cert:/cert
       - pxc-config:/etc/percona-xtradb-cluster.conf.d
+      - ./etc/mysql-node3.cnf:/etc/mysql/conf.d/mysql-node3.cnf:ro
       - mysql-node3-data:/var/lib/mysql
     ports:
       - "3308:3306"

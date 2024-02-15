@@ -36,7 +36,7 @@ server-id=10
 gtid-mode=ON
 enforce-gtid-consistency
 log-bin
-#super-read-only
+# super-read-only
 # read-only 对超管账户无效
 read-only=1
 

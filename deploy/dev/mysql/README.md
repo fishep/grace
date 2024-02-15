@@ -40,6 +40,10 @@ show variables like '%character%';
 CREATE DATABASE test;
 DROP DATABASE test;
 
+show engines;
+show create table test;
+set global default_storage_engine = 'ndbcluster';
+
 SHOW variables like '%log_bin%';
 SHOW variables like 'binlog_format';
 SHOW BINARY LOGS;
