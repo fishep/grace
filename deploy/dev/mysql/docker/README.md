@@ -57,26 +57,9 @@ START SLAVE;
 cd percona-xtradb-cluster
 docker compose -p grace up -d 
 
-# mysql-node1开启同步
-docker exec -it mysql-node1 bash
-
-mysql -uroot -proot
-create user 'mover'@'%' identified by 'mover';
-grant replication slave on *.*  to 'mover'@'%';
-flush privileges;
-
-# mysql-node2开启同步 mysql-node3开启同步
-docker exec -it mysql-node2 bash
-docker exec -it mysql-node3 bash
-
-mysql -uroot -proot
-SHOW MASTER STATUS;
-SHOW SLAVE STATUS;
-CHANGE MASTER TO MASTER_HOST='mysql-node1', MASTER_USER='mover', MASTER_PASSWORD='mover', MASTER_AUTO_POSITION=1, MASTER_CONNECT_RETRY=3;
-START SLAVE;
-
 # 打印节点ip
-for i in {1,3}; do ping -c 1 mysql-node$i; done | grep PING | sed -r "s/PING mysql-node[0-9] \((.*)\): 56 data bytes/\1/"  
+docker exec -it alpine bash
+for i in {1..3}; do ping -c 1 mysql-node$i; done | grep PING | sed -r "s/PING mysql-node[0-9] \((.*)\): 56 data bytes/\1/"  
 ```
 
 ### 数据库初始化

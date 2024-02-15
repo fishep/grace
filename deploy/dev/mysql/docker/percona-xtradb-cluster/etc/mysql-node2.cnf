@@ -3,4 +3,3 @@ server-id=2
 gtid-mode=ON
 enforce-gtid-consistency
 log-bin
-super-read-only
