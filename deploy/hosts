@@ -25,6 +25,7 @@
 
 192.168.1.1    prometheus.dev
 192.168.1.1    prometheusalertmanager.dev
+192.168.1.1    prometheusnodeexporter.dev
 192.168.1.1    grafana.dev
 
 192.168.1.1    shop-gateway.dev
@@ -58,6 +59,7 @@
 
 192.168.1.10    prometheus.test
 192.168.1.10    prometheusalertmanager.test
+192.168.1.10    prometheusnodeexporter.test
 192.168.1.10    grafana.test
 
 192.168.1.10    shop-gateway.test
@@ -91,6 +93,7 @@
 
 10.33.29.12    prometheus.prod
 10.33.29.12    prometheusalertmanager.prod
+10.33.29.12    prometheusnodeexporter.prod
 10.33.29.12    grafana.prod
 
 10.33.29.12    shop-gateway.prod
