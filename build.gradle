@@ -63,6 +63,25 @@ subprojects {
             mavenBom "com.alibaba.cloud:spring-cloud-alibaba-dependencies:${springCloudAlibabaVersion}"
         }
     }
+
+    dependencies {
+        compileOnly 'org.projectlombok:lombok'
+        implementation 'cn.hutool:hutool-all'
+        implementation 'org.mapstruct:mapstruct'
+
+        annotationProcessor 'org.projectlombok:lombok'
+        annotationProcessor 'org.mapstruct:mapstruct-processor'
+
+//        testAnnotationProcessor 'org.projectlombok:lombok'
+//        testAnnotationProcessor 'org.mapstruct:mapstruct-processor'
+    }
+
+    def profile = System.getProperty("profile") ?: "dev"
+    processResources {
+        filesMatching('bootstrap.yml') {
+            filter org.apache.tools.ant.filters.ReplaceTokens, tokens: [profile: profile]
+        }
+    }
 }
 
 ext {
@@ -71,26 +90,21 @@ ext {
 }
 
 configure(gatewayProjects) { p ->
-    dependencies {
-        api project(":common")
-
-        implementation 'org.springframework.boot:spring-boot-starter'
-
-        testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    }
-
-    test {
-        useJUnitPlatform()
-    }
 }
 
 configure(serviceProjects) { p ->
     dependencies {
-        api project(":common")
-
         implementation 'org.springframework.boot:spring-boot-starter'
-        implementation "org.springframework.cloud:spring-cloud-starter-bootstrap"
         implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
+        implementation 'com.alibaba.nacos:nacos-client:2.2.3'
+        implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config') {
+            exclude group: 'com.alibaba.nacos:nacos-client'
+        }
+        implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery') {
+            exclude group: 'com.alibaba.nacos:nacos-client'
+        }
+        implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel'
 
         testImplementation 'org.springframework.boot:spring-boot-starter-test'
     }

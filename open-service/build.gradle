@@ -1,4 +1,5 @@
 description 'open module, 第三方使用, 聚合服务'
 
 dependencies {
+    api project(":microservice:sso-starter")
 }

@@ -1,0 +1,22 @@
+description 'grace-gateway'
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.cloud:spring-cloud-starter-gateway'
+    implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
+    implementation 'org.springframework.cloud:spring-cloud-starter-loadbalancer'
+    implementation 'com.alibaba.nacos:nacos-client:2.2.3'
+    implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config') {
+        exclude group: 'com.alibaba.nacos:nacos-client'
+    }
+    implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery') {
+        exclude group: 'com.alibaba.nacos:nacos-client'
+    }
+    implementation 'com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useJUnitPlatform()
+}

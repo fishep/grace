@@ -29,32 +29,47 @@
           },
           {
             "enabled": true,
-            "key": "shopUrl",
+            "key": "shop.service",
+            "value": "http://shop.service.dev:10000/api"
+          },
+          {
+            "enabled": true,
+            "key": "back.service",
+            "value": "http://back.service.dev:10000/api"
+          },
+          {
+            "enabled": true,
+            "key": "open.service",
+            "value": "http://open.service.dev:10000/api"
+          },
+          {
+            "enabled": true,
+            "key": "shop-service",
             "value": "http://shop-service.dev:10100/api"
           },
           {
             "enabled": true,
-            "key": "backUrl",
+            "key": "back-service",
             "value": "http://back-service.dev:10200/api"
           },
           {
             "enabled": true,
-            "key": "openUrl",
+            "key": "open-service",
             "value": "http://open-service.dev:10300/api"
           },
           {
             "enabled": true,
-            "key": "dmsUrl",
-            "value": "http://dms-server.dev:11000/api"
+            "key": "bss",
+            "value": "http://bss-server.dev:11000/api"
           },
           {
             "enabled": true,
-            "key": "ssoUrl",
+            "key": "sso",
             "value": "http://sso-server.dev:12000/api"
           },
           {
             "enabled": true,
-            "key": "iscUrl",
+            "key": "isc",
             "value": "http://isc-server.dev:13000/api"
           }
         ]
@@ -65,6 +80,22 @@
   },
   "header": {
     "project": "grace",
-    "globalHeaderList": []
+    "globalHeaderList": [
+      {
+        "enabled": true,
+        "key": "Accept",
+        "value": "application/json, text/plain, */*"
+      },
+      {
+        "enabled": true,
+        "key": "Accept-Language",
+        "value": "zh-CN"
+      },
+      {
+        "enabled": false,
+        "key": "Authorization",
+        "value": "Bearer token"
+      }
+    ]
   }
 }

@@ -28,13 +28,13 @@
 192.168.1.1    prometheusnodeexporter.dev
 192.168.1.1    grafana.dev
 
-192.168.1.1    shop-gateway.dev
+192.168.1.1    shop.service.dev
+192.168.1.1    back.service.dev
+192.168.1.1    open.service.dev
 192.168.1.1    shop-service.dev
-192.168.1.1    back-gateway.dev
 192.168.1.1    back-service.dev
-192.168.1.1    open-gateway.dev
 192.168.1.1    open-service.dev
-192.168.1.1    dat-server.dev
+192.168.1.1    bss-server.dev
 192.168.1.1    sso-server.dev
 192.168.1.1    isc-server.dev
 
@@ -62,13 +62,14 @@
 192.168.1.10    prometheusnodeexporter.test
 192.168.1.10    grafana.test
 
-192.168.1.10    shop-gateway.test
+
+192.168.1.10    shop.service.test
+192.168.1.10    back.service.test
+192.168.1.10    open.service.test
 192.168.1.10    shop-service.test
-192.168.1.10    back-gateway.test
 192.168.1.10    back-service.test
-192.168.1.10    open-gateway.test
 192.168.1.10    open-service.test
-192.168.1.10    dat-server.test
+192.168.1.10    bss-server.test
 192.168.1.10    sso-server.test
 192.168.1.10    isc-server.test
 
@@ -96,12 +97,12 @@
 10.33.29.12    prometheusnodeexporter.prod
 10.33.29.12    grafana.prod
 
-10.33.29.12    shop-gateway.prod
+10.33.29.12    shop.service.prod
+10.33.29.12    back.service.prod
+10.33.29.12    open.service.prod
 10.33.29.12    shop-service.prod
-10.33.29.12    back-gateway.prod
 10.33.29.12    back-service.prod
-10.33.29.12    open-gateway.prod
 10.33.29.12    open-service.prod
-10.33.29.12    dat-server.prod
+10.33.29.12    bss-server.prod
 10.33.29.12    sso-server.prod
 10.33.29.12    isc-server.prod

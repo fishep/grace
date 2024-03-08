@@ -1,0 +1,19 @@
+server:
+  port: ${PORT:10300}
+spring:
+  application:
+    name: open-service
+  profiles:
+    active: @profile@
+
+dubbo:
+  application:
+    name: open-service-dubbo
+    qos-enable: false
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    group: dubbo
+  consumer:
+    filter: DubboConsumerContextFilter

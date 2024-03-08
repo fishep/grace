@@ -1,0 +1,7 @@
+server:
+  port: ${PORT:10300}
+spring:
+  application:
+    name: open-service
+  messages:
+    basename: i18n/common

@@ -1,5 +1,9 @@
 description '微服务'
 
+bootJar {
+    enabled = false
+}
+
 subprojects {
     dependencies {
         implementation 'org.springframework.boot:spring-boot-starter'
@@ -18,17 +22,27 @@ ext {
 }
 
 configure(commonProjects) { p ->
+    bootJar {
+        enabled = false
+    }
+
     dependencies {
-        api project(":common")
+        api project(":microservice:common")
     }
 }
 
 configure(serverProjects) { p ->
     dependencies {
-        api "org.springframework.boot:spring-boot-starter-web"
-        implementation "org.springframework.cloud:spring-cloud-starter-bootstrap"
+        api project(":microservice:server")
     }
 }
 
-configure(starterProjects) { projects ->
+configure(starterProjects) { p ->
+    bootJar {
+        enabled = false
+    }
+
+    dependencies {
+        api project(":microservice:starter")
+    }
 }

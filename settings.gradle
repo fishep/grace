@@ -11,15 +11,21 @@ rootProject.name = 'grace'
 //    project.buildFileName = "${project.name}.gradle"
 //}
 
-include 'common'
-include 'shop-gateway'
+include 'grace-gateway'
+
 include 'shop-service'
-include 'back-gateway'
 include 'back-service'
-include 'open-gateway'
 include 'open-service'
 
 include 'microservice'
+
+include 'microservice:common'
+findProject(':microservice:common')?.name = 'common'
+include 'microservice:server'
+findProject(':microservice:server')?.name = 'server'
+include 'microservice:starter'
+findProject(':microservice:starter')?.name = 'starter'
+
 include 'microservice:sso-common'
 findProject(':microservice:sso-common')?.name = 'sso-common'
 include 'microservice:sso-server'
@@ -32,4 +38,3 @@ include 'microservice:isc-server'
 findProject(':microservice:isc-server')?.name = 'isc-server'
 include 'microservice:isc-starter'
 findProject(':microservice:isc-starter')?.name = 'isc-starter'
-

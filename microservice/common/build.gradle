@@ -1,0 +1,8 @@
+description 'server'
+
+bootJar {
+    enabled = false
+}
+
+dependencies {
+}

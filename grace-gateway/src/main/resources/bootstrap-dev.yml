@@ -1,0 +1,36 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: nacos.dev:8848
+        file-extension: yaml
+      discovery:
+        server-addr: nacos.dev:8848
+    sentinel:
+      transport:
+        port: 8859
+        dashboard: sentinel.dev:8858
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      predicate:
+        weight:
+          enabled: false
+      routes:
+        #    - Path=/**
+        #    - Host=grace-gateway.dev
+        #    - Host=grace-gateway.dev:10010
+        #    - Host=grace-gateway.dev:**
+        - id: shop.service
+          uri: lb://shop-service
+          predicates:
+            - Host=shop.service.dev:**
+        - id: back.service
+          uri: lb://back-service
+          predicates:
+            - Host=back.service.dev:**
+        - id: open.service
+          uri: lb://open-service
+          predicates:
+            - Host=open.service.dev:**
