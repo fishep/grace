@@ -11,4 +11,5 @@ dependencies {
     api 'org.springframework.cloud:spring-cloud-starter-loadbalancer'
     api 'org.apache.dubbo:dubbo-spring-boot-starter'
     api 'org.apache.dubbo:dubbo-registry-nacos'
+
 }

@@ -48,3 +48,4 @@ VO（View Object）
 BO（Business Object）  
 POJO（Plain Old Java Object）  
 DAO（Data Access Object）  
+DP（Domain Primitive）。

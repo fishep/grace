@@ -4,4 +4,4 @@ spring:
   application:
     name: open-service
   messages:
-    basename: i18n/common
+    basename: i18n/common,i18n/sso-common

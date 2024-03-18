@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>utf8</charset>
+        </encoder>
+        <file>log/back-service/back-service.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <maxIndex>1</maxIndex>
+            <fileNamePattern>log/back-service/back-service.%i.log</fileNamePattern>
+            <maxHistory>365</maxHistory>
+        </rollingPolicy>
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>128MB</MaxFileSize>
+        </triggeringPolicy>
+    </appender>
+
+    <springProfile name="dev">
+        <logger name="com.fishep.back.service" level="INFO"/>
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </springProfile>
+    <springProfile name="test">
+        <logger name="com.fishep.back.service" level="WARN"/>
+        <root level="WARN">
+            <appender-ref ref="FILE"/>
+        </root>
+    </springProfile>
+    <springProfile name="prod">
+        <logger name="com.fishep.back.service" level="ERROR"/>
+        <root level="ERROR">
+            <appender-ref ref="FILE"/>
+        </root>
+    </springProfile>
+</configuration>

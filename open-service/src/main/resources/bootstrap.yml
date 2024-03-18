@@ -16,4 +16,4 @@ dubbo:
   registry:
     group: dubbo
   consumer:
-    filter: DubboConsumerContextFilter
+    filter: DubboConsumerGlobalContextFilter

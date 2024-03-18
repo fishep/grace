@@ -1,1 +1,1 @@
-DubboProviderContextFilter=com.fishep.server.dubbo.filter.DubboProviderContextFilter
+DubboProviderGlobalContextFilter=com.fishep.server.dubbo.filter.DubboProviderGlobalContextFilter

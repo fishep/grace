@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fishep.common.exception.ServiceError;
 import com.fishep.common.type.Result;
-import com.fishep.server.annotation.CustomResult;
+import com.fishep.common.annotation.CustomResult;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;

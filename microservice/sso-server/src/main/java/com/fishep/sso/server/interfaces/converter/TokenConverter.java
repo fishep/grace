@@ -16,6 +16,6 @@ public interface TokenConverter {
     TokenConverter INSTANCE = Mappers.getMapper(TokenConverter.class);
 
 //    @Mapping(target = "seatCount", source = "numberOfSeats")
-    TokenVO dtoToVo(TokenDTO tokenDTO);
+    TokenVO toTokenVo(TokenDTO tokenDTO);
 
 }

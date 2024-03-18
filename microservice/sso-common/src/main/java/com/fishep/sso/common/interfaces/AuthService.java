@@ -1,8 +1,9 @@
 package com.fishep.sso.common.interfaces;
 
-import com.fishep.common.type.Result;
+import com.fishep.sso.common.interfaces.to.CheckTO;
 import com.fishep.sso.common.interfaces.to.RegisterTO;
 import com.fishep.sso.common.interfaces.vo.TokenVO;
+import com.fishep.sso.common.interfaces.vo.UserVO;
 
 /**
  * @Author fly.fei
@@ -11,6 +12,8 @@ import com.fishep.sso.common.interfaces.vo.TokenVO;
  **/
 public interface AuthService {
 
-    Result<TokenVO> register(RegisterTO registerTO);
+    TokenVO register(RegisterTO registerTO);
+
+    UserVO check(CheckTO checkTO);
 
 }

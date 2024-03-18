@@ -17,15 +17,27 @@ public class Message {
     public static final String ERROR = "error";
     public static final String FALLBACK = "fallback";
 
+    public static final String PROHIBIT_HEADER = "prohibit.header";
+    public static final String PROHIBIT_USER = "prohibit.user";
+
     public static String __(String key) {
         return SpringUtil.getBean(MessageSource.class).getMessage(key, null, key, LocaleContextHolder.getLocale());
     }
 
-    public static String __(String key, Object arg) {
-        return SpringUtil.getBean(MessageSource.class).getMessage(key, new Object[]{arg}, key, LocaleContextHolder.getLocale());
-    }
+//    public static String __(String key, Object arg) {
+//        return SpringUtil.getBean(MessageSource.class).getMessage(key, new Object[]{arg}, key, LocaleContextHolder.getLocale());
+//    }
+//
+//    public static String __(String key, Object[] args) {
+//        return SpringUtil.getBean(MessageSource.class).getMessage(key, args, key, LocaleContextHolder.getLocale());
+//    }
 
-    public static String __(String key, Object[] args) {
+//    public static String __(String key, String... args) {
+//        return SpringUtil.getBean(MessageSource.class).getMessage(key, args, key, LocaleContextHolder.getLocale());
+//    }
+
+    public static String __(String key, Object... args) {
         return SpringUtil.getBean(MessageSource.class).getMessage(key, args, key, LocaleContextHolder.getLocale());
     }
+
 }

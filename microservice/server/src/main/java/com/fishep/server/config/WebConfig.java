@@ -1,12 +1,10 @@
 package com.fishep.server.config;
 
-import com.fishep.server.web.interceptor.ContextHandlerInterceptor;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -20,10 +18,10 @@ public class WebConfig implements WebMvcConfigurer {
         WebMvcConfigurer.super.configurePathMatch(configurer);
     }
 
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new ContextHandlerInterceptor());
-    }
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
+//        registry.addInterceptor(new ContextHandlerInterceptor());
+//    }
 
     @Override
     public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {

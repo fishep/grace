@@ -4,4 +4,23 @@ spring:
   application:
     name: back-service
   messages:
-    basename: i18n/common
+    basename: i18n/common,i18n/sso-common
+
+service:
+  routes:
+    unauth:
+      - '/api/auth/register'
+      - '/api/auth/login'
+    ignore:
+      - '/api/demo/.*'
+    fallback: 'deny'
+
+#开启sql日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  level:
+    tracer: trace
+    com.fishep.sso.starter: debug

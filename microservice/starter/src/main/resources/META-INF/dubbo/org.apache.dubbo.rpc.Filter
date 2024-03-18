@@ -1,1 +1,1 @@
-DubboConsumerContextFilter=com.fishep.starter.dubbo.filter.DubboConsumerContextFilter
+DubboConsumerGlobalContextFilter=com.fishep.starter.dubbo.filter.DubboConsumerGlobalContextFilter

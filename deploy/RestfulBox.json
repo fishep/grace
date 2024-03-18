@@ -95,6 +95,26 @@
         "enabled": false,
         "key": "Authorization",
         "value": "Bearer token"
+      },
+      {
+        "enabled": false,
+        "key": "G-Platform",
+        "value": "BACK"
+      },
+      {
+        "enabled": false,
+        "key": "G-User-Type",
+        "value": "ADMIN"
+      },
+      {
+        "enabled": false,
+        "key": "G-User-Id",
+        "value": "1"
+      },
+      {
+        "enabled": false,
+        "key": "G-User-Name",
+        "value": "root"
       }
     ]
   }

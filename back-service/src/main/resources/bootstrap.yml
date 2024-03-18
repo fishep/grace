@@ -16,5 +16,5 @@ dubbo:
   registry:
     group: dubbo
   consumer:
-    filter: DubboConsumerContextFilter
+    filter: DubboConsumerGlobalContextFilter
 #    timeout: 1000000

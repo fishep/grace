@@ -2,4 +2,6 @@ description 'sso start, sso spring boot starter'
 
 dependencies {
     api project(":microservice:sso-common")
+
+    api "org.springframework.boot:spring-boot-starter-web"
 }
