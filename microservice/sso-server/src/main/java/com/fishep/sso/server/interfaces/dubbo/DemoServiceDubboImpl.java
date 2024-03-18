@@ -1,7 +1,6 @@
 package com.fishep.sso.server.interfaces.dubbo;
 
 import com.fishep.common.context.GlobalContextHolder;
-import com.fishep.common.context.GlobalContextKey;
 import com.fishep.common.exception.ServiceException;
 import com.fishep.sso.common.interfaces.DemoService;
 import org.apache.dubbo.config.annotation.DubboService;
@@ -38,10 +37,8 @@ public class DemoServiceDubboImpl implements DemoService {
     @Override
     public Map<String, Object> context() {
         HashMap<String, Object> map = new HashMap<>();
-        map.put(GlobalContextKey.USER_TYPE, GlobalContextHolder.getUser().getType().name());
-        map.put(GlobalContextKey.USER_ID, GlobalContextHolder.getUser().getId().getValue().toString());
-        map.put(GlobalContextKey.USER_NAME, GlobalContextHolder.getUser().getName().getValue());
-        map.put(GlobalContextKey.PLATFORM, GlobalContextHolder.getPlatform().getType().name());
+
+        GlobalContextHolder.load(map::put);
 
         return map;
     }

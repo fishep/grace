@@ -36,8 +36,7 @@ public class DebugController {
     @GetMapping("/context")
     public Map<String, Object> context() {
         HashMap<String, Object> map = new HashMap<>();
-        map.put("user", GlobalContextHolder.getUser());
-        map.put("platform", GlobalContextHolder.getPlatform());
+        GlobalContextHolder.load(map::put);
 
         return map;
     }

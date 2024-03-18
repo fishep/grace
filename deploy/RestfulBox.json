@@ -98,23 +98,13 @@
       },
       {
         "enabled": false,
-        "key": "G-Platform",
-        "value": "BACK"
+        "key": "Platform",
+        "value": "{\"type\":\"BACK\"}"
       },
       {
         "enabled": false,
-        "key": "G-User-Type",
-        "value": "ADMIN"
-      },
-      {
-        "enabled": false,
-        "key": "G-User-Id",
-        "value": "1"
-      },
-      {
-        "enabled": false,
-        "key": "G-User-Name",
-        "value": "root"
+        "key": "User",
+        "value": "{\"id\":{\"value\":1},\"name\":{\"value\":\"root\"},\"type\":\"ADMIN\"}"
       }
     ]
   }

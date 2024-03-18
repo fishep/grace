@@ -2,7 +2,6 @@ package com.fishep.sso.server.interfaces.controller;
 
 import com.fishep.common.annotation.CustomResult;
 import com.fishep.common.context.GlobalContextHolder;
-import com.fishep.common.context.GlobalContextKey;
 import com.fishep.common.exception.ServiceException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,10 +42,7 @@ public class DemoController {
     @GetMapping("/context")
     public Map<String, Object> context() {
         HashMap<String, Object> map = new HashMap<>();
-        map.put(GlobalContextKey.USER_TYPE, GlobalContextHolder.getUser().getType().name());
-        map.put(GlobalContextKey.USER_ID, GlobalContextHolder.getUser().getId().getValue().toString());
-        map.put(GlobalContextKey.USER_NAME, GlobalContextHolder.getUser().getName().getValue());
-        map.put(GlobalContextKey.PLATFORM, GlobalContextHolder.getPlatform().getType().name());
+        GlobalContextHolder.load(map::put);
 
         return map;
     }

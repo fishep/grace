@@ -3,3 +3,5 @@ server:
 spring:
   application:
     name: grace-gateway
+  messages:
+    basename: i18n/common

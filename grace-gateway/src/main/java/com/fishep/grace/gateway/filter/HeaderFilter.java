@@ -1,6 +1,6 @@
 package com.fishep.grace.gateway.filter;
 
-import com.fishep.common.context.GlobalContextKey;
+import com.fishep.common.context.GlobalContextHolder;
 import com.fishep.common.exception.ServiceError;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
@@ -29,7 +29,7 @@ public class HeaderFilter implements GlobalFilter, Ordered {
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
 
         if (prohibitHeaders == null) {
-            prohibitHeaders = GlobalContextKey.getKeys();
+            prohibitHeaders = GlobalContextHolder.Loader.getKeys();
         }
 
         HttpHeaders headers = exchange.getRequest().getHeaders();

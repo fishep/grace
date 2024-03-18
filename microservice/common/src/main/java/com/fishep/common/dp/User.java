@@ -1,6 +1,7 @@
 package com.fishep.common.dp;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 
 /**
@@ -8,7 +9,7 @@ import lombok.Getter;
  * @Date 2024/3/8 16:39
  * @Desc
  **/
-@Getter
+@Data
 @AllArgsConstructor
 public class User {
 
