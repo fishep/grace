@@ -1,5 +1,6 @@
 package com.fishep.isc.server;
 
+import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -8,11 +9,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Date 2024/2/3 12:09
  * @Desc
  **/
+@EnableDubbo
 @SpringBootApplication
-public class ISCServer {
+public class IscServer {
 
     public static void main(String[] args) {
-        SpringApplication.run(ISCServer.class, args);
+        SpringApplication.run(IscServer.class, args);
     }
 
 }

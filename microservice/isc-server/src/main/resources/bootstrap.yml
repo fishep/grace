@@ -4,3 +4,18 @@ server:
 spring:
   application:
     name: isc-server
+  profiles:
+    active: @profile@
+
+dubbo:
+  application:
+    name: isc-server-dubbo
+    qos-enable: false
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    group: dubbo
+  provider:
+    filter: DubboProviderGlobalContextFilter
+#    timeout: 1000000

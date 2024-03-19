@@ -2,4 +2,5 @@ description 'back service, 内部使用, 聚合服务'
 
 dependencies {
     api project(":microservice:sso-starter")
+    api project(":microservice:isc-starter")
 }

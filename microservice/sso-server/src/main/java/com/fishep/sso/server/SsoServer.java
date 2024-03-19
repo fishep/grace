@@ -11,10 +11,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  **/
 @EnableDubbo
 @SpringBootApplication
-public class SSOServer {
+public class SsoServer {
 
     public static void main(String[] args) {
-        SpringApplication.run(SSOServer.class, args);
+        SpringApplication.run(SsoServer.class, args);
     }
 
 }

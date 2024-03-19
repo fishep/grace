@@ -4,7 +4,7 @@ spring:
   application:
     name: back-service
   messages:
-    basename: i18n/common,i18n/sso-common
+    basename: i18n/common,i18n/sso-common,i18n/isc-common
 
 service:
   routes:

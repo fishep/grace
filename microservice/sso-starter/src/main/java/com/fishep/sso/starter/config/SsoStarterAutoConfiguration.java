@@ -12,5 +12,5 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan("com.fishep.sso.starter")
 @EnableFeignClients({"com.fishep.sso.starter"})
-public class SSOStarterAutoConfiguration {
+public class SsoStarterAutoConfiguration {
 }
