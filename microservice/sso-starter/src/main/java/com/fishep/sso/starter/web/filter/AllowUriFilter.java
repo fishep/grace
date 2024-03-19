@@ -8,6 +8,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
 
@@ -19,6 +20,7 @@ import static com.fishep.sso.common.type.Message.__;
  * @Date 2024/3/7 17:15
  * @Desc
  **/
+@Slf4j
 //@Order(1)
 //@Component
 public class AllowUriFilter extends HttpFilter {
@@ -33,7 +35,7 @@ public class AllowUriFilter extends HttpFilter {
     @Override
     protected void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
 
-        System.out.println("AllowUriFilter Thread:" + Thread.currentThread().getName());
+        log.trace("doFilter, RequestId is " + request.getRequestId());
 
         Boolean login = GlobalContextHolder.getUser() != null;
 

@@ -14,10 +14,10 @@
             <pattern>${FILE_LOG_PATTERN}</pattern>
             <charset>utf8</charset>
         </encoder>
-        <file>log/back-service/back-service.log</file>
+        <file>log/grace-gateway/grace-gateway.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
             <maxIndex>1</maxIndex>
-            <fileNamePattern>log/back-service/back-service.%i.log</fileNamePattern>
+            <fileNamePattern>log/grace-gateway/grace-gateway.%i.log</fileNamePattern>
             <maxHistory>365</maxHistory>
         </rollingPolicy>
         <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">

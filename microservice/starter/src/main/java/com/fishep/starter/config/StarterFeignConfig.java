@@ -12,9 +12,9 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class StarterFeignConfig {
 
-    @Bean
-    Logger.Level feignLoggerLeave() {
-        return Logger.Level.FULL;
-    }
+//    @Bean
+//    Logger.Level feignLoggerLeave() {
+//        return Logger.Level.FULL;
+//    }
 
 }

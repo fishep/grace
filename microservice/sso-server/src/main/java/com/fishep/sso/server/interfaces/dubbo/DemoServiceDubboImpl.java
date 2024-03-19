@@ -18,9 +18,6 @@ public class DemoServiceDubboImpl implements DemoService {
 
     @Override
     public String sayHello(String name) {
-
-        System.out.println("DemoServiceDubboImpl sayHello Thread:" + Thread.currentThread().getName());
-
         return "hello " + name;
     }
 

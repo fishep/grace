@@ -2,6 +2,7 @@ package com.fishep.isc.server.interfaces.dubbo;
 
 import com.fishep.common.context.GlobalContextHolder;
 import com.fishep.isc.common.interfaces.ContextUserService;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboService;
 
 import java.util.HashMap;
@@ -13,6 +14,7 @@ import java.util.List;
  * @Date 2024/3/18 17:49
  * @Desc
  **/
+@Slf4j
 @DubboService
 public class ContextUserServiceImpl implements ContextUserService {
 
@@ -21,7 +23,7 @@ public class ContextUserServiceImpl implements ContextUserService {
 
         HashMap<String, String> hashMap = new HashMap<>();
         GlobalContextHolder.load(hashMap::put);
-        System.out.println(hashMap);
+        log.trace(hashMap.toString());
 
         LinkedList<String> list = new LinkedList<>();
         list.add("demo.permission.roles");

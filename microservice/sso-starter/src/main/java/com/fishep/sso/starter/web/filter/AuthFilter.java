@@ -13,6 +13,7 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 
 import java.io.IOException;
@@ -22,6 +23,7 @@ import java.io.IOException;
  * @Date 2024/3/7 17:15
  * @Desc
  **/
+@Slf4j
 //@Order(0)
 //@Component
 public class AuthFilter extends HttpFilter {
@@ -35,7 +37,7 @@ public class AuthFilter extends HttpFilter {
     @Override
     protected void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
 
-        System.out.println("AuthFilter Thread:" + Thread.currentThread().getName());
+        log.trace("doFilter, RequestId is " + request.getRequestId());
 
         String token = getToken(request);
         User user = getUser(token);

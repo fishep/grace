@@ -8,6 +8,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -21,13 +22,14 @@ import static com.fishep.common.type.Message.__;
  * @Date 2024/3/12 16:08
  * @Desc
  **/
+@Slf4j
 @Component
 public class BackServiceFilter extends HttpFilter {
 
     @Override
     protected void doFilter(HttpServletRequest request, HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
 
-        System.out.println("BackServiceFilter Thread:" + Thread.currentThread().getName());
+        log.trace("doFilter, RequestId is " + request.getRequestId());
 
         User user = GlobalContextHolder.getUser();
         if (user != null && user.getType() != User.Type.ADMIN) {

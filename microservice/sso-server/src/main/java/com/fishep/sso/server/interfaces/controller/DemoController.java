@@ -23,9 +23,6 @@ public class DemoController {
     @CustomResult
     @GetMapping("/sayHello")
     public String sayHello(@RequestParam String name) {
-
-        System.out.println("DemoController sayHello Thread:" + Thread.currentThread().getName());
-
         return "hello " + name;
     }
 

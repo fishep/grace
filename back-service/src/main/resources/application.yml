@@ -16,11 +16,6 @@ service:
     fallback: 'deny'
 
 #开启sql日志
-mybatis-plus:
-  configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
-logging:
-  level:
-    tracer: trace
-    com.fishep.sso.starter: debug
+#mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

@@ -1,6 +1,7 @@
 package com.fishep.starter.dubbo.filter;
 
 import com.fishep.common.context.GlobalContextHolder;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.rpc.*;
 
 /**
@@ -8,12 +9,13 @@ import org.apache.dubbo.rpc.*;
  * @Date 2024/3/4 16:06
  * @Desc
  **/
+@Slf4j
 public class DubboConsumerGlobalContextFilter implements Filter {
 
     @Override
     public Result invoke(Invoker<?> invoker, Invocation invocation) throws RpcException {
 
-        System.out.println("DubboConsumerGlobalContextFilter Thread:" + Thread.currentThread().getName());
+        log.trace("Service: " + invocation.getServiceName() + ", Method: " + invocation.getMethodName());
 
         RpcContextAttachment attachment = RpcContext.getClientAttachment();
         GlobalContextHolder.load(attachment::setAttachment);
