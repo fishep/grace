@@ -2,9 +2,7 @@ package com.fishep.back.service.controller.demo;
 
 import com.fishep.isc.common.interfaces.ContextUserService;
 import org.apache.dubbo.config.annotation.DubboReference;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,6 +22,11 @@ public class ContextUserController {
     public List<String> permissions() {
         List<String> permissions = contextUserService.permissions();
         return permissions;
+    }
+
+    @GetMapping("/permissionCheck")
+    public Boolean permissionCheck(@RequestParam String permission) {
+        return contextUserService.have(permission);
     }
 
 }

@@ -37,4 +37,11 @@ public class PermissionController {
         return permissions;
     }
 
+    @GetMapping("/reject")
+    @Permission("demo.permission.permissions")
+    @Permission("demo.permission.permissions.reject")
+    public String reject() {
+        return "accept";
+    }
+
 }

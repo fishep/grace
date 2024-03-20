@@ -34,4 +34,14 @@ public class ContextUserServiceImpl implements ContextUserService {
         return list;
     }
 
+    @Override
+    public Boolean have(String permission) {
+
+        if (permission.equals("demo.permission.permissions.reject")) {
+            return Boolean.FALSE;
+        }
+
+        return Boolean.TRUE;
+    }
+
 }
