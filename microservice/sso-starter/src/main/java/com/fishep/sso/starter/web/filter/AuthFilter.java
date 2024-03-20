@@ -5,8 +5,8 @@ import com.fishep.common.dp.Id;
 import com.fishep.common.dp.Name;
 import com.fishep.common.dp.User;
 import com.fishep.sso.common.interfaces.AuthService;
-import com.fishep.sso.common.interfaces.to.CheckTO;
-import com.fishep.sso.common.interfaces.vo.UserVO;
+import com.fishep.sso.common.interfaces.to.CheckTo;
+import com.fishep.sso.common.interfaces.vo.UserVo;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;
@@ -76,9 +76,9 @@ public class AuthFilter extends HttpFilter {
 
     private User getUser(String token) {
         if (!(token == null || token.isEmpty())) {
-            UserVO userVO = authService.check(new CheckTO(token));
-            if (userVO != null) {
-                return new User(new Id(userVO.getId()), new Name(userVO.getName()), User.Type.valueOf(userVO.getType()));
+            UserVo userVo = authService.check(new CheckTo(token));
+            if (userVo != null) {
+                return new User(new Id(userVo.getId()), new Name(userVo.getName()), User.Type.valueOf(userVo.getType()));
             }
         }
 

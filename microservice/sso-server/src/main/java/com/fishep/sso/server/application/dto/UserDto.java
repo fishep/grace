@@ -1,21 +1,23 @@
-package com.fishep.sso.common.interfaces.to;
+package com.fishep.sso.server.application.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
-
 /**
  * @Author fly.fei
- * @Date 2024/3/11 16:03
+ * @Date 2024/3/11 15:28
  * @Desc
  **/
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CheckTO implements Serializable {
+public class UserDto {
 
-    public String token;
+    public Long id;
+
+    public String name;
+
+    public String type;
 
 }

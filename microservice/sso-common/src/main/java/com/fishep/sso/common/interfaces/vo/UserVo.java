@@ -10,7 +10,7 @@ import java.io.Serializable;
  * @Desc
  **/
 @Data
-public class UserVO implements Serializable {
+public class UserVo implements Serializable {
 
     public Long id;
 

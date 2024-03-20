@@ -1,20 +1,18 @@
-package com.fishep.sso.common.interfaces.vo;
+package com.fishep.sso.server.application.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
-
 /**
  * @Author fly.fei
- * @Date 2024/2/29 11:26
+ * @Date 2024/2/28 11:44
  * @Desc
  **/
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class TokenVO implements Serializable {
+public class TokenDto {
 
     public Long userId;
 

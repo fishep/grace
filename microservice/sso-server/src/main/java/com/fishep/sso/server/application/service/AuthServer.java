@@ -2,8 +2,8 @@ package com.fishep.sso.server.application.service;
 
 import com.fishep.sso.server.application.cqe.CheckCommand;
 import com.fishep.sso.server.application.cqe.RegisterCommand;
-import com.fishep.sso.server.application.dto.TokenDTO;
-import com.fishep.sso.server.application.dto.UserDTO;
+import com.fishep.sso.server.application.dto.TokenDto;
+import com.fishep.sso.server.application.dto.UserDto;
 
 /**
  * @Author fly.fei
@@ -12,8 +12,8 @@ import com.fishep.sso.server.application.dto.UserDTO;
  **/
 public interface AuthServer {
 
-    TokenDTO register(RegisterCommand registerCommand);
+    TokenDto register(RegisterCommand registerCommand);
 
-    UserDTO check(CheckCommand checkCommand);
+    UserDto check(CheckCommand checkCommand);
 
 }

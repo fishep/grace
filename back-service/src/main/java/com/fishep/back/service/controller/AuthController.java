@@ -1,8 +1,8 @@
 package com.fishep.back.service.controller;
 
 import com.fishep.sso.common.interfaces.AuthService;
-import com.fishep.sso.common.interfaces.to.RegisterTO;
-import com.fishep.sso.common.interfaces.vo.TokenVO;
+import com.fishep.sso.common.interfaces.to.RegisterTo;
+import com.fishep.sso.common.interfaces.vo.TokenVo;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,8 +22,8 @@ public class AuthController {
     private AuthService authService;
 
     @PostMapping("/register")
-    public TokenVO register(@RequestBody RegisterTO registerTO) {
-        return authService.register(registerTO);
+    public TokenVo register(@RequestBody RegisterTo registerTo) {
+        return authService.register(registerTo);
     }
 
 }

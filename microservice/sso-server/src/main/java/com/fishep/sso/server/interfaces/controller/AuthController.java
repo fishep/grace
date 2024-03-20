@@ -1,13 +1,13 @@
 package com.fishep.sso.server.interfaces.controller;
 
-import com.fishep.sso.common.interfaces.to.CheckTO;
-import com.fishep.sso.common.interfaces.to.RegisterTO;
-import com.fishep.sso.common.interfaces.vo.TokenVO;
-import com.fishep.sso.common.interfaces.vo.UserVO;
+import com.fishep.sso.common.interfaces.to.CheckTo;
+import com.fishep.sso.common.interfaces.to.RegisterTo;
+import com.fishep.sso.common.interfaces.vo.TokenVo;
+import com.fishep.sso.common.interfaces.vo.UserVo;
 import com.fishep.sso.server.application.cqe.CheckCommand;
 import com.fishep.sso.server.application.cqe.RegisterCommand;
-import com.fishep.sso.server.application.dto.TokenDTO;
-import com.fishep.sso.server.application.dto.UserDTO;
+import com.fishep.sso.server.application.dto.TokenDto;
+import com.fishep.sso.server.application.dto.UserDto;
 import com.fishep.sso.server.application.service.AuthServer;
 import com.fishep.sso.server.interfaces.converter.TokenConverter;
 import com.fishep.sso.server.interfaces.converter.UserConverter;
@@ -38,23 +38,23 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public TokenVO register(@RequestBody RegisterTO registerTO) {
+    public TokenVo register(@RequestBody RegisterTo registerTo) {
 
-        TokenDTO dto = authServer.register(new RegisterCommand());
+        TokenDto dto = authServer.register(new RegisterCommand());
 
-        TokenVO tokenVO = tokenConverter.toTokenVo(dto);
+        TokenVo tokenVo = tokenConverter.toTokenVo(dto);
 
-        return tokenVO;
+        return tokenVo;
     }
 
     @PostMapping("/check")
-    public UserVO check(@RequestBody CheckTO checkTO) {
+    public UserVo check(@RequestBody CheckTo checkTo) {
 
-        UserDTO userDTO = authServer.check(new CheckCommand());
+        UserDto userDto = authServer.check(new CheckCommand());
 
-        UserVO userVO = userConverter.toUserVo(userDTO);
+        UserVo userVo = userConverter.toUserVo(userDto);
 
-        return userVO;
+        return userVo;
     }
 
 }

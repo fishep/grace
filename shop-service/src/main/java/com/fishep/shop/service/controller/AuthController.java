@@ -1,10 +1,10 @@
 package com.fishep.shop.service.controller;
 
 import com.fishep.sso.common.interfaces.AuthService;
-import com.fishep.sso.common.interfaces.to.CheckTO;
-import com.fishep.sso.common.interfaces.to.RegisterTO;
-import com.fishep.sso.common.interfaces.vo.TokenVO;
-import com.fishep.sso.common.interfaces.vo.UserVO;
+import com.fishep.sso.common.interfaces.to.CheckTo;
+import com.fishep.sso.common.interfaces.to.RegisterTo;
+import com.fishep.sso.common.interfaces.vo.TokenVo;
+import com.fishep.sso.common.interfaces.vo.UserVo;
 import com.fishep.sso.starter.feign.AuthFeign;
 import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,23 +29,23 @@ public class AuthController {
     private AuthFeign authFeign;
 
     @PostMapping("/registerByFeign")
-    public TokenVO registerByFeign(@RequestBody RegisterTO registerTO) {
-        return authFeign.register(registerTO);
+    public TokenVo registerByFeign(@RequestBody RegisterTo registerTo) {
+        return authFeign.register(registerTo);
     }
 
     @PostMapping("/registerByDubbo")
-    public TokenVO registerByDubbo(@RequestBody RegisterTO registerTO) {
-        return authService.register(registerTO);
+    public TokenVo registerByDubbo(@RequestBody RegisterTo registerTo) {
+        return authService.register(registerTo);
     }
 
     @PostMapping("/checkByFeign")
-    public UserVO checkByFeign(@RequestBody CheckTO checkTO) {
-        return authFeign.check(checkTO);
+    public UserVo checkByFeign(@RequestBody CheckTo checkTo) {
+        return authFeign.check(checkTo);
     }
 
     @PostMapping("/checkByDubbo")
-    public UserVO checkByDubbo(@RequestBody CheckTO checkTO) {
-        return authService.check(checkTO);
+    public UserVo checkByDubbo(@RequestBody CheckTo checkTo) {
+        return authService.check(checkTo);
     }
 
 }

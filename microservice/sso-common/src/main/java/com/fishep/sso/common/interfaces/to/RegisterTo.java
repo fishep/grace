@@ -11,7 +11,7 @@ import java.io.Serializable;
  * @Desc
  **/
 @Data
-public class RegisterTO implements Serializable {
+public class RegisterTo implements Serializable {
 
     private String name;
 

@@ -1,9 +1,9 @@
 package com.fishep.sso.common.interfaces;
 
-import com.fishep.sso.common.interfaces.to.CheckTO;
-import com.fishep.sso.common.interfaces.to.RegisterTO;
-import com.fishep.sso.common.interfaces.vo.TokenVO;
-import com.fishep.sso.common.interfaces.vo.UserVO;
+import com.fishep.sso.common.interfaces.to.CheckTo;
+import com.fishep.sso.common.interfaces.to.RegisterTo;
+import com.fishep.sso.common.interfaces.vo.TokenVo;
+import com.fishep.sso.common.interfaces.vo.UserVo;
 
 /**
  * @Author fly.fei
@@ -12,8 +12,8 @@ import com.fishep.sso.common.interfaces.vo.UserVO;
  **/
 public interface AuthService {
 
-    TokenVO register(RegisterTO registerTO);
+    TokenVo register(RegisterTo registerTo);
 
-    UserVO check(CheckTO checkTO);
+    UserVo check(CheckTo checkTo);
 
 }

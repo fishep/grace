@@ -2,10 +2,10 @@ package com.fishep.sso.starter.feign;
 
 import com.fishep.common.type.Result;
 import com.fishep.sso.common.interfaces.AuthService;
-import com.fishep.sso.common.interfaces.to.CheckTO;
-import com.fishep.sso.common.interfaces.to.RegisterTO;
-import com.fishep.sso.common.interfaces.vo.TokenVO;
-import com.fishep.sso.common.interfaces.vo.UserVO;
+import com.fishep.sso.common.interfaces.to.CheckTo;
+import com.fishep.sso.common.interfaces.to.RegisterTo;
+import com.fishep.sso.common.interfaces.vo.TokenVo;
+import com.fishep.sso.common.interfaces.vo.UserVo;
 import com.fishep.sso.starter.feign.impl.AuthFeignImpl;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,20 +15,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 public interface AuthFeign extends AuthService {
 
     @PostMapping("/register")
-    Result<TokenVO> registerByFeign(@RequestBody RegisterTO registerTO);
+    Result<TokenVo> registerByFeign(@RequestBody RegisterTo registerTo);
 
     @PostMapping("/check")
-    Result<UserVO> checkByFeign(@RequestBody CheckTO checkTO);
+    Result<UserVo> checkByFeign(@RequestBody CheckTo checkTo);
 
     @Override
-    default TokenVO register(RegisterTO registerTO) {
-        Result<TokenVO> result = this.registerByFeign(registerTO);
+    default TokenVo register(RegisterTo registerTo) {
+        Result<TokenVo> result = this.registerByFeign(registerTo);
         return result.getData();
     }
 
     @Override
-    default UserVO check(CheckTO checkTO) {
-        Result<UserVO> result = this.checkByFeign(checkTO);
+    default UserVo check(CheckTo checkTo) {
+        Result<UserVo> result = this.checkByFeign(checkTo);
         return result.getData();
     }
 

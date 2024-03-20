@@ -1,7 +1,7 @@
 package com.fishep.sso.server.interfaces.converter;
 
-import com.fishep.sso.common.interfaces.vo.UserVO;
-import com.fishep.sso.server.application.dto.UserDTO;
+import com.fishep.sso.common.interfaces.vo.UserVo;
+import com.fishep.sso.server.application.dto.UserDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -15,6 +15,6 @@ public interface UserConverter {
 
     UserConverter INSTANCE = Mappers.getMapper(UserConverter.class);
 
-    UserVO toUserVo(UserDTO userDTO);
+    UserVo toUserVo(UserDto userDto);
 
 }
