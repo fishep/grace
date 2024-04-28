@@ -11,4 +11,8 @@ tasklist | findstr "8240"
 
 kill 8240
 
+mklink /d home mysql-8.0.32-winx64
+
+rmdir home
+
 ```
