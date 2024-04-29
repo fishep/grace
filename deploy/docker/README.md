@@ -14,12 +14,12 @@ docker manifest create fishep/alpine:latest fishep/alpine:arm64 fishep/alpine:am
 docker manifest push fishep/alpine:latest
 docker manifest rm fishep/alpine:latest
 
+docker run -it --rm --name=alpine --network=grace_doris_net fishep/alpine:latest bash
+docker cp ./test.csv alpine:/opt
 
-docker run -it --privileged --pid=host --name=change_count debian nsenter -t 1 -m -u -n -i sh
-sysctl -w vm.max_map_count=2000000
-
-docker-compose -p grace -f docker-compose-amd64.yaml up -d
-docker-compose -p grace -f docker-compose-arm64.yaml up -d
+docker run -it --name=alpine fishep/alpine:amd64 bash
+docker commit alpine fishep/alpine:amd64
+docker push fishep/alpine:amd64
 
 ```
 

@@ -1,4 +1,5 @@
 version: '3'
+
 services:
   docker-fe:
     image: "apache/doris:1.2.2-fe-arm"
@@ -27,6 +28,19 @@ services:
     networks:
       doris_net:
         ipv4_address: 172.20.80.3
+  docker-broker:
+    image: "apache/doris:1.2.2-broker-arm"
+    container_name: "doris-broker"
+    hostname: "broker"
+    environment:
+      - FE_SERVERS=fe1:172.20.80.2:9010
+      - BROKER_ADDR=broker1:172.20.80.4:8000
+    ports:
+      - "8000:8000"
+    networks:
+      doris_net:
+        ipv4_address: 172.20.80.4
+
 networks:
   doris_net:
     ipam:
